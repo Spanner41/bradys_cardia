@@ -1,19 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-light container">
-  <a class="navbar-brand" href="<%= root_path %>">
-    <%= image_tag "logo.png", height:32, class: "d-inline-block align-top" %>
-    Cardia Design
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="<%= root_path %>">
+        <%= image_tag "logo.png", height:32, class: "d-inline-block align-top" %>
+        Cardia Design
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% navitems.each do |navitem| %>
-        <li class="nav-item active">
-          <a class="nav-link" href="<%= navitem[:href] %>"><%= navitem[:title] %></a>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</nav>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <% navitems.each do |navitem| %>
+            <li class="nav-item <%= 'active' if current_page?(navitem[:href]) %>">
+              <%= link_to navitem[:href], class: "nav-link" do %><%= navitem[:title] %>
+                <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(navitem[:href]) %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

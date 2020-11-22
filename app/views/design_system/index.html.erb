@@ -1,44 +1,12 @@
 <%= render "hero" %>
 
 <div class="container">
-    <%= render "section", header: "Values" do %>
-        The values of my design system
-        <ul>
-            <li>Human</li>
-            <li>Surprising and Delightful</li>
-            <li>Accessible</li>
-            <li>Visual</li>
-        </ul>
-    <% end %>
-
-    <%= render "section", header: "Logo" do %>
-        <p>This is a description of my logo and how it should be used.</p>
-        <p>Here are variants to the logo</p>
-    <% end %>
-
-    <%= render "section", header: "Color Pallette" do %>
-        <p>This is the color pallette.  Steal from health scout</p>
-    <% end %>
-
-    <%= render "section", header: "Accessibility" do %>
-        <p>Give contrast guidelines</p>
-        <p>Screen reader standards</p>
-    <% end %>
-
-    <%= render "section", header: "Typography" do %>
-        <p>Talk about Fonts and sizes for different elements</p>
-    <% end %>
-
-    <%= render "section", header: "Use of Images and Video" do %>
-        <p>This is the way we want images and videos to make people feel.</p>
-        <p>Use these common elements.</p>
-    <% end %>
-
-    <%= render "section", header: "Voice" do %>
-        <p>How should text sound, and how does that communicate our values?</p>
-    <% end %>
-
-    <%= render "section", header: "Components" do %>
-        <p>These are reusable global components.  They should be used to compose more complicated forms and elements.</p>
+    <% content.each_with_index do |c, index| %>
+        <%= render "section", content: c %>
+        <% unless index == content.size - 1 %>
+            <hr class="my-5" \>
+        <% else %>
+            <div class="mb-5" \>
+        <% end %>
     <% end %>
 </div>

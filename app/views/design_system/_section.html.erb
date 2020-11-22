@@ -1,2 +1,12 @@
-<h2 class="h2"><%= header %></h2>
-<div><%= yield %></div>
+<div class="row">
+    <div class="col-md-7 <%= "order-md-2" if content[:image_position] == "left" %>">
+        <h2 class="h2"><%= content[:header] %></h2>
+        <div><%= content[:text].html_safe %></div>
+    </div>
+
+    <% if content[:image_src].present? %>
+        <div class="col-md-5 mx-auto d-flex justify-content-center <%= "order-md-1" if content[:image_position] == "left" %>">
+            <%= image_tag content[:image_src], class: "img-fluid" %>
+        </div>
+    <% end %>
+</div>
