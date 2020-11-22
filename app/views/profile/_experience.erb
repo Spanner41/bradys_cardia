@@ -6,7 +6,7 @@
     <% unless elaboration.empty? %>
       <ul>
         <% elaboration.each do |e| %>
-          <li><%= e[:text] %> <% if e[:link].present? %> <%= e[:link] %> <% end %> </li>
+          <li><%= e[:text] %> <% if e[:link].present? %> <a href="<%= e[:link] %>"><%= icon("fas", "external-link-alt", class: "text-secondary") %></a> <% end %> </li>
         <% end %>
       </ul>
     <% end %>

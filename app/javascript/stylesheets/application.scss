@@ -4,26 +4,6 @@
 $white: white;
 $black: black;
 
-.navbar {
-        margin-bottom: 0;
-        background: $black;
-}
-body {
-        background: $white;
-        color: $black;
-        font-family: 'Merriweather', sans-serif;
-}
-h1,
-h2 {
-        font-weight: bold;
-}
-p {
-        font-size: 16px;
-        color: $white;
-}
-a:visited {
-        color: $black;
-}
 .jumbotron {
         background: black;
         color: $white;
@@ -32,25 +12,4 @@ a:visited {
                 color: $white;
                 font-size: 26px;
         }
-}
-.card, .card-text {
-        color: $black;
-}
-.link {
-        color: $white;
-}
-.btn-primary {
-        color: $white;
-        border-color: $white;
-        margin-bottom: 5px;
-}
-.btn-sm {
-        background-color: $white;
-        display: inline-block;
-}
-caption {
-
-        float: left;
-        clear: both;
-
 }
