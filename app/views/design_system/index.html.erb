@@ -1,12 +1,19 @@
 <%= render "hero" %>
 
 <div class="container">
-    <% content.each_with_index do |c, index| %>
-        <%= render "section", content: c %>
-        <% unless index == content.size - 1 %>
-            <hr class="my-5" \>
-        <% else %>
-            <div class="mb-5" \>
-        <% end %>
+  <h2 class="text-center">Core values</h2>
+  <div class="row justify-content-around">
+    <% features.each do |feature| %>
+      <%= render "image_feature", feature: feature %>
     <% end %>
+  </div>
+
+  <% content.each_with_index do |c, index| %>
+      <%= render "section", content: c %>
+      <% unless index == content.size - 1 %>
+          <hr class="my-5" \>
+      <% else %>
+          <div class="mb-5" \>
+      <% end %>
+  <% end %>
 </div>

@@ -1,18 +1,31 @@
 module DesignSystemHelper
-  def content
+  def features
     [
       {
-        header: 'Values',
-        text: 'The values of my design system'\
-                  '<ul>'\
-                  '<li>Human</li>'\
-                  '<li>Surprising and Delightful</li>'\
-                  '<li>Accessible</li>'\
-                  '<li>Talk less</li>'\
-                  '</ul>',
-        image_src: 'https://picsum.photos/500/300?random=1',
-        image_position: 'left'
+        header: 'Human',
+        text: 'Seek to understand and connect with the needs of users.  Show empathy and give personal experiences.',
+        image_src: 'https://picsum.photos/150?random=1'
       },
+      {
+        header: 'Surprising and Delightful',
+        text: 'Give users small moments of unexpected delight when they interact with the application.',
+        image_src: 'https://picsum.photos/150?random=2'
+      },
+      {
+        header: 'Accessible',
+        text: 'Inclusive design is good design.  When we create experiences for the especially vulnerable, it works better for everyone.',
+        image_src: 'https://picsum.photos/150?random=3'
+      },
+      {
+        header: 'Talk is Cheap',
+        text: 'Without comprimizing on accessibility, communicate in few words.  Rely heavily on intuitive controls and media to communicate when possible.',
+        image_src: 'https://picsum.photos/150?random=4'
+      }
+    ]
+  end
+
+  def content
+    [
       {
         header: 'Logo',
         text: '<p>This is a description of my logo and how it should be used.</p>'\

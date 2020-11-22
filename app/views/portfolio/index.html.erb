@@ -1,10 +1,10 @@
 <%= render "hero" %>
 <div class="container">
-    <div class="row justify-content-around">
-        <% cards.each do |card| %>
-            <div clss="col-sm d-flex">
-                <%= render "card", card: card %>
-            </div>
-        <% end %>
-    </div>
+  <div class="row justify-content-around">
+    <% cards.each do |card| %>
+      <div clss="col-sm d-flex">
+        <%= render "card", card: card %>
+      </div>
+    <% end %>
+  </div>
 </div>
