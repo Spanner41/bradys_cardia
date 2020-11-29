@@ -1,0 +1,13 @@
+<div class="card mb-4" style="width: 18rem;">
+  <ul class="list-group">
+    <li class="list-group-item d-flex" style="color: <%= color[:hex] %>; background-color: <%= color[:name] %>">
+      <div class="flex-grow-1"><%= color[:name] %></div><div class="text-right"><%= color[:hex] %></div>
+    </li>
+    <% color[:variants].each do |variant| %>
+      <li class="list-group-item color_spectrum_item d-flex" style="color: <%= text_color(variant[:hex]) %>; background-color: <%= variant[:hex] %>"
+        onclick="if(navigator.clipboard) navigator.clipboard.writeText('<%= variant[:hex] %>')">
+        <div class="flex-grow-1"><%= variant[:number] %></div><div class="text-right"><%= variant[:hex] %></div>
+      </li>
+    <% end %>
+  </ul>
+</div>

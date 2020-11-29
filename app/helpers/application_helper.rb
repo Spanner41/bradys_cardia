@@ -7,4 +7,10 @@ module ApplicationHelper
       { href: contact_index_path, title: 'Contact' }
     ]
   end
+
+  def show_svg(path, style: "", classes: "")
+    File.open("app/assets/images/#{path}", "rb") do |file|
+      "<span style='#{style}' class='#{classes}'>#{raw file.read}</span>".html_safe
+    end
+  end
 end

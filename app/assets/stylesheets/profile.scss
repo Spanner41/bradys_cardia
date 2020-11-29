@@ -1,3 +1,19 @@
 // Place all the styles related to the Profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.splash-title {
+  font-family: 'Sawarabi Mincho';
+  margin-top: 4rem;
+  font-size: 3rem;
+  line-height: normal;
+}
+
+.splash-subtitle {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.landing-background {
+  background: linear-gradient(0deg, rgba(8,61,80,1) 46%, rgba(4,41,54,1) 100%);
+}

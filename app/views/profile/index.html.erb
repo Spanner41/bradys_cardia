@@ -1,4 +1,51 @@
-<%= render "hero" %>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "/profile.js" %>
+<% end %>
+
+<%= show_svg "landing-background.svg", style: "position: absolute; z-index: 1; width: 100%", classes: "d-none d-sm-flex" %>
+<span class="d-flex d-sm-none position-absolute landing-background" style="z-index: 1; left: 0; right: 0; height: 400px"></span>
+<div class="container" style="height: 0px">
+  <svg id="animated-container" class="position-absolute" style="z-index: 1" width="100%" height="400" xmlns="http://www.w3.org/2000/svg">
+    <svg class="animate-translate d-none d-sm-flex" data-animate-factor=1 width="150" height="150"
+      viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" x="100" y="100">
+      <circle cx="50" cy="50" r="50" fill="#02212C"/>
+    </svg>
+    <svg class="animate-translate" data-animate-factor=0.5 width="30" height="30"
+      viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" x="0" y="300">
+      <circle cx="50" cy="50" r="50" fill="#FFBB3C"/>
+    </svg>
+    <svg width="10" height="10"
+      viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" x="30" y="290">
+      <circle cx="50" cy="50" r="50" fill="#EE4580"/>
+    </svg>
+  </svg>
+  <div class="row mx-auto position-relative" style="top: 340px; z-index: 2">
+    <button type="button" class="btn btn-success bg-success mx-auto">Contact Me</button>
+  </div>
+</div>
+<div class="position-absolute" style="top: 300px; height: 100%; left:0; right: 0">
+  <div class="position-sticky container" style="top: 20px">
+    <button class="btn btn-circle btn-md bg-secondary float-right" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</div>
+<div class="container position-relative" style="z-index:3" height="400">
+  <div class="row"><%= render "navbar" %></div>
+  <div class="row">
+    <div class="col-sm-4 col-7">
+      <div class="splash-title text-secondary text-nowrap">Brady Steed</div>
+      <span class="d-block" style="border-top: 4px solid #F8F2F0; width: 90px; margin-top: -5px"></span>
+      <div class="splash-subtitle text-light" style="width: 140%">
+        Software Devloper and UX Designer delivering world-class web applications with heart.
+        I will bring your system to life.
+      </div>
+    </div>
+    <div class="col-8 card position-relative pr-0 d-none d-sm-flex"
+      style="z-index: -2; background-color: #09455A; top: 70px; height: 200px; border-radius: 1rem"></div>
+  </div>
+  <div style="padding: 200px"></div>
+</div>
 
 <div class="container">
   <h2 class="h2">Experience</h2>

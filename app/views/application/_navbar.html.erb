@@ -1,9 +1,11 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container">
+<% bg_color = local_assigns.fetch(:background, "transparent") %>
+
+<header class="w-100">
+  <nav class="navbar navbar-expand-sm navbar-dark py-0" style>
+    <div class="container p-0">
       <a class="navbar-brand" href="<%= root_path %>">
         <%= image_tag "logo.png", height:32, class: "d-inline-block align-top" %>
-        Cardia Design
+        <span class="brand-text"><span class="brand-pink">Cardia</span> Design</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

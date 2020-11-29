@@ -1,4 +1,4 @@
-<%= render "hero" %>
+<%= render "components/hero", title: title, sub_title: sub_title %>
 
 <div class="container">
   <h2 class="text-center">Core values</h2>
@@ -7,6 +7,7 @@
       <%= render "image_feature", feature: feature %>
     <% end %>
   </div>
+  <hr class="my-5" \>
 
   <% content.each_with_index do |c, index| %>
       <%= render "section", content: c %>

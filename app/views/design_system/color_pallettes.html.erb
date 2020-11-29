@@ -1,0 +1,12 @@
+<% sub_title = '"Color is my daylong obsession, joy, and torment." ― Claude Monet'%>
+<%= render "components/hero", title: "Color Pallettes", sub_title: sub_title  %>
+
+<div class="container">
+  <div class="row justify-content-around">
+    <% colors.each do |color| %>
+      <div clss="col-sm-3 d-flex">
+        <%= render 'design_system/color_pallettes/color_spectrum', color: color %>
+      </div>
+    <% end %>
+  </div>
+</div>
