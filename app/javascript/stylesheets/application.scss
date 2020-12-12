@@ -1,82 +1,35 @@
-// Bootstrap overrides:
-$primary: #09455A;
-$secondary: #FFBB3C;
-$success: #EE4580;
-$light: #F8F2F0;
-$dark: #02212C;
-
-$navbar-dark-color: $light;
-
-@import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Bahianita:400,700');
-@import url('https://fonts.googleapis.com/css?family=Sawarabi Mincho:400,700');
-
-.landing-background {
-  position: absolute;
-  width: 1452px;
-  height: 721px;
-  left: -12px;
-  top: 0px;
-
-  background: linear-gradient(180deg, #042936 46.21%, #083D50 100%);
+:root {
+  --black: #09455A;
+  --yellow: #FFBB3C;
+  --pink: #EE4580;
+  --white: #F8F2F0;
+  --black: #02212C;
 }
 
-.jumbotron {
-        background-color: #033242;
-        color: $light;
+html {
+  box-sizing: border-box;
+}
 
-        div.lead {
-                font-size: 26px;
-        }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 15px;
+}
+
+button {
+  background: var(--yellow);
+  border: 0;
+  padding: 10px 20px;
+}
+
+img {
+  max-width: 100%;
 }
 
 .turbolinks-progress-bar {
-  color: $secondary;
-}
-
-.brand-text {
-  font-family: Bahianita;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 25px;
-  color: $light;
-  /* identical to box height */
-
-  text-transform: capitalize;
-  font-feature-settings: 'liga' off;
-}
-
-.brand-pink {
-  color: $secondary;
-}
-
-.active > .nav-link {
-  color: $secondary !important;
-}
-
-.btn-circle.btn-sm { 
-  width: 30px; 
-  height: 30px; 
-  padding: 6px 0px; 
-  border-radius: 15px; 
-  font-size: 8px; 
-  text-align: center; 
-} 
-
-.btn-circle.btn-md { 
-  width: 50px; 
-  height: 50px; 
-  padding: 7px 10px; 
-  border-radius: 25px; 
-  font-size: 10px; 
-  text-align: center; 
-} 
-
-.btn-circle.btn-xl { 
-  width: 70px; 
-  height: 70px; 
-  padding: 10px 16px; 
-  border-radius: 35px; 
-  font-size: 12px; 
-  text-align: center; 
+  color: var(--yellow);
 }

@@ -1,0 +1,63 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'header'%> 
+<% end %>
+
+<header class="header">
+  <nav class="navbar">
+    <a class="brand" href="<%= root_path %>">
+      <%= image_tag "logo.png", height:32, class: "logo" %>
+      <span class="brand-text"><span class="brand-color">Cardia</span> Design</span>
+    </a>
+    <ul class="menu-items">
+    <% navitems.each do |navitem| %>
+      <li >
+        <%= link_to navitem[:href], class: "menu-item #{"active" if current_page?(navitem[:href])}" do %><%= navitem[:title] %><% end %>
+      </li>
+    <% end %>
+  </nav>
+  <div class="header__content">
+    <div class="animate-wrapper">
+      <div class="name" data-depth="1.1">Brady Steed</div>
+      <div class="tagline" data-depth="1.2">This is a profile description of who I am.  This is a thing I offer, and I have this vibe</div>
+      <div class="header__card" data-depth="1"></div>
+      <div class="circle c1" data-depth="-1.5"></div>
+      <div class="circle c2" data-depth="1"></div>
+      <div class="circle c3" data-depth="1.8"></div>
+      <div class="circle c4" data-depth="2"></div>
+      <div class="contact" data-depth="5"><button>Contact Me</button></div>
+    </div>
+  </div>
+</header>
+
+<script>
+const animate = document.querySelector('.animate-wrapper');
+const container = document.querySelector('.header');
+const contents = document.querySelectorAll('[data-depth]');
+
+container.addEventListener('mousemove', (e) => {
+  let xAxis = (e.pageX - (container.offsetWidth / 2)) / container.offsetWidth * 5;
+  let yAxis = (e.pageY - (container.offsetHeight / 2)) / container.offsetHeight * 5;
+  animate.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+});
+
+container.addEventListener('mouseenter', (e) => {
+  animate.style.transition = "none";
+
+  contents.forEach((element) => {
+    let depth = element.dataset.depth * 50;
+    element.style.transform = `translateZ(${depth}px)`
+  });
+});
+
+container.addEventListener('mouseleave', (e) => {
+  animate.style.transition = "all 1s ease";
+  animate.style.transform = "rotate(0)";
+
+  contents.forEach((element) => {
+    let depth = element.style.zIndex * 150;
+    element.style.transform = `translateZ(0)`
+  });
+});
+
+
+</script>

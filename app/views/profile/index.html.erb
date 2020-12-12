@@ -1,7 +1,28 @@
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag "/profile.js" %>
 <% end %>
-
+<%= render partial: 'header' %>
+<!-- <div class="position-absolute" style="top: 240px; height: 100%; left:0; right: 0">
+  <header class="position-sticky container" style="top: 20px; z-index: 4">
+    <nav class="navbar flex-row-reverse">
+      <button class="btn btn-secondary btn-circle btn-xl" type="button" data-toggle="collapse" data-target="#floatingNavbar"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <%= icon("fas", "bars", class: "text-dark fa-2x") %>
+      </button>
+      <div id="floatingNavbar" class="ml-auto bg-secondary">
+        <ul class="navbar-nav" style="flex-direction: row">
+          <% navitems.each do |navitem| %>
+            <li class="nav-item mr-1 <%= 'active' if current_page?(navitem[:href]) %>">
+              <%= link_to navitem[:href], class: "nav-link" do %><%= navitem[:title] %>
+                <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(navitem[:href]) %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </header>
+</div>
 <%= show_svg "landing-background.svg", style: "position: absolute; z-index: 1; width: 100%", classes: "d-none d-sm-flex" %>
 <span class="d-flex d-sm-none position-absolute landing-background" style="z-index: 1; left: 0; right: 0; height: 400px"></span>
 <div class="container" style="height: 0px">
@@ -23,15 +44,29 @@
     <button type="button" class="btn btn-success bg-success mx-auto">Contact Me</button>
   </div>
 </div>
-<div class="position-absolute" style="top: 300px; height: 100%; left:0; right: 0">
-  <div class="position-sticky container" style="top: 20px">
-    <button class="btn btn-circle btn-md bg-secondary float-right" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</div>
 <div class="container position-relative" style="z-index:3" height="400">
-  <div class="row"><%= render "navbar" %></div>
+  <div class="row pt-1">
+    <div class="col">
+      <div class="navbar navbar-expand-sm navbar-dark">
+        <a href="<%= root_path %>" class="mr-1">
+          <%= image_tag "logo.png", height:32, class: "align-top" %>
+          <span class="brand-text"><span class="brand-color">Cardia</span> Design</span>
+        </a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <% navitems.each do |navitem| %>
+              <li class="nav-item <%= 'active' if current_page?(navitem[:href]) %>">
+                <%= link_to navitem[:href], class: "nav-link" do %><%= navitem[:title] %>
+                  <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(navitem[:href]) %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
   <div class="row">
     <div class="col-sm-4 col-7">
       <div class="splash-title text-secondary text-nowrap">Brady Steed</div>
@@ -45,7 +80,7 @@
       style="z-index: -2; background-color: #09455A; top: 70px; height: 200px; border-radius: 1rem"></div>
   </div>
   <div style="padding: 200px"></div>
-</div>
+</div> -->
 
 <div class="container">
   <h2 class="h2">Experience</h2>
