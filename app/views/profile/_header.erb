@@ -35,8 +35,8 @@ const container = document.querySelector('.header');
 const contents = document.querySelectorAll('[data-depth]');
 
 container.addEventListener('mousemove', (e) => {
-  let xAxis = (e.pageX - (container.offsetWidth / 2)) / container.offsetWidth * 5;
-  let yAxis = (e.pageY - (container.offsetHeight / 2)) / container.offsetHeight * 5;
+  let xAxis = (e.pageX - (container.offsetWidth / 2)) / container.offsetWidth * 8;
+  let yAxis = (e.pageY - (container.offsetHeight / 2)) / container.offsetHeight * 8;
   animate.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 });
 
